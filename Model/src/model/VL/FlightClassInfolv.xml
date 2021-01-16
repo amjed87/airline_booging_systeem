@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FlightClassInfolv"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ASS.FlightClassInfoass">
+  <ViewLinkDefEnd
+    Name="Flight"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.Flightvo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Flight"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Flightvo.FlightNumber"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ClassInfo"
+    Cardinality="-1"
+    Owner="model.VO.ClassInfovo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ClassInfo"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.ClassInfovo.FlightNumber"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

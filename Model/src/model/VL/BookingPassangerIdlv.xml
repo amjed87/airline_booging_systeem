@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BookingPassangerIdlv"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ASS.BookingPassangerIdass">
+  <ViewLinkDefEnd
+    Name="Passanger"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.Passangervo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Passanger"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Passangervo.PassangerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Booking"
+    Cardinality="-1"
+    Owner="model.VO.Bookingvo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Booking"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Bookingvo.PassangerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

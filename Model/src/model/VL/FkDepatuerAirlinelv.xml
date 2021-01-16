@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkDepatuerAirlinelv"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ASS.FkDepatuerAirlineass">
+  <ViewLinkDefEnd
+    Name="Airport"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.Airportvo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Airport"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Airportvo.Code"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Flight1"
+    Cardinality="-1"
+    Owner="model.VO.Flightvo">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Flight1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Flightvo.Departure"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
