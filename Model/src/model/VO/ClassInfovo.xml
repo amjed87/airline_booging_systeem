@@ -55,7 +55,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -64,16 +64,42 @@
     PrecisionRule="true"
     EntityAttrName="Capacity"
     EntityUsage="ClassInfoeo"
-    AliasName="CAPACITY"/>
+    AliasName="CAPACITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.ClassInfovo.Capacity_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.ClassInfovo.Capacity_FMT_FORMATTER"/>
+        <CONTROLTYPE
+          Value="number_edit"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Price"
     PrecisionRule="true"
     EntityAttrName="Price"
     EntityUsage="ClassInfoeo"
-    AliasName="PRICE"/>
+    AliasName="PRICE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.VO.ClassInfovo.Price_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.VO.ClassInfovo.Price_FMT_FORMAT"/>
+        <CONTROLTYPE
+          Value="date"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="Booking"
     ViewLink="model.VL.BookingClassInfolv"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

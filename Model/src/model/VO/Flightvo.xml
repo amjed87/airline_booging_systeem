@@ -35,7 +35,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Company"/>
-      <Item Value="Type"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -135,7 +134,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -149,7 +148,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -158,7 +157,16 @@
     PrecisionRule="true"
     EntityAttrName="DTime"
     EntityUsage="Flighteo"
-    AliasName="D_TIME"/>
+    AliasName="D_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.VO.Flightvo.DTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.VO.Flightvo.DTime_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Arrival"
     PrecisionRule="true"
@@ -169,7 +177,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -178,13 +186,16 @@
     PrecisionRule="true"
     EntityAttrName="ATime"
     EntityUsage="Flighteo"
-    AliasName="A_TIME"/>
-  <ViewAttribute
-    Name="AirportId"
-    PrecisionRule="true"
-    EntityAttrName="AirportId"
-    EntityUsage="Flighteo"
-    AliasName="AIRPORT_ID"/>
+    AliasName="A_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.VO.Flightvo.ATime_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.VO.Flightvo.ATime_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Company"
     PrecisionRule="true"
@@ -208,4 +219,8 @@
     ViewLink="model.VL.FlightClassInfolv"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

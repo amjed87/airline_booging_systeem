@@ -47,12 +47,18 @@
     TableName="CLASS_INFO"/>
   <Attribute
     Name="Price"
-    Precision="126"
     ColumnName="PRICE"
-    SQLType="FLOAT"
-    Type="java.lang.Float"
-    ColumnType="FLOAT"
-    TableName="CLASS_INFO"/>
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CLASS_INFO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.Entity.ClassInfoeo.Price_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Booking"
     Association="model.ASS.BookingClassInfoass"
@@ -89,4 +95,8 @@
       <Item Value="model.Entity.ClassInfoeo.FlightNumber"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

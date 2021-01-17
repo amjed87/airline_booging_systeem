@@ -28,12 +28,12 @@ public class FlighteoImpl extends EntityImpl {
         DTime,
         Arrival,
         ATime,
-        AirportId,
         ClassInfo,
         Airplane,
         Airport,
         Airport1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -55,13 +55,13 @@ public class FlighteoImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int FLIGHTNUMBER = AttributesEnum.FlightNumber.index();
     public static final int AIRPLANEID = AttributesEnum.AirplaneId.index();
     public static final int DEPARTURE = AttributesEnum.Departure.index();
     public static final int DTIME = AttributesEnum.DTime.index();
     public static final int ARRIVAL = AttributesEnum.Arrival.index();
     public static final int ATIME = AttributesEnum.ATime.index();
-    public static final int AIRPORTID = AttributesEnum.AirportId.index();
     public static final int CLASSINFO = AttributesEnum.ClassInfo.index();
     public static final int AIRPLANE = AttributesEnum.Airplane.index();
     public static final int AIRPORT = AttributesEnum.Airport.index();
@@ -71,6 +71,13 @@ public class FlighteoImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public FlighteoImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.Entity.Flighteo");
     }
 
     /**
@@ -169,21 +176,6 @@ public class FlighteoImpl extends EntityImpl {
         setAttributeInternal(ATIME, value);
     }
 
-    /**
-     * Gets the attribute value for AirportId, using the alias name AirportId.
-     * @return the value of AirportId
-     */
-    public String getAirportId() {
-        return (String) getAttributeInternal(AIRPORTID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for AirportId.
-     * @param value value to set the AirportId
-     */
-    public void setAirportId(String value) {
-        setAttributeInternal(AIRPORTID, value);
-    }
 
     /**
      * @return the associated entity oracle.jbo.RowIterator.
@@ -234,6 +226,7 @@ public class FlighteoImpl extends EntityImpl {
         setAttributeInternal(AIRPORT1, value);
     }
 
+
     /**
      * @param flightNumber key constituent
 
@@ -243,13 +236,6 @@ public class FlighteoImpl extends EntityImpl {
         return new Key(new Object[] { flightNumber });
     }
 
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.Entity.Flighteo");
-    }
-    
     public Number getSequenceValue(String SequenceName) {
         SequenceImpl MySeq = new SequenceImpl(SequenceName, getDBTransaction());
         return MySeq.getSequenceNumber();

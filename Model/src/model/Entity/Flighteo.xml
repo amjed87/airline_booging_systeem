@@ -74,18 +74,6 @@
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
     TableName="FLIGHT"/>
-  <Attribute
-    Name="AirportId"
-    Precision="50"
-    ColumnName="AIRPORT_ID"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="FLIGHT">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="50"/>
-    </DesignTime>
-  </Attribute>
   <AccessorAttribute
     Name="ClassInfo"
     Association="model.ASS.FlightClassInfoass"
