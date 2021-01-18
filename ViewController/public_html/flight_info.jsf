@@ -129,8 +129,9 @@
                                                       maximumLength="#{bindings.ClassInfo2.hints.Price.precision}"
                                                       shortDesc="#{bindings.ClassInfo2.hints.Price.tooltip}" id="it1">
                                             <f:validator binding="#{row.bindings.Price.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.ClassInfo2.hints.Price.format}"/>
+                                            <af:convertNumber
+                                                              pattern="#{bindings.ClassInfo2.hints.Price.format}"
+                                                              type="currency" currencySymbol="$"/>
                                         </af:inputText>
                                     </af:column>
                                 </af:table>

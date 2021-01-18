@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/flight_info.jsf" usageId="view_flight_infoPageDef"/>
+    <page path="/index.jsf" usageId="view_indexPageDef"/>
+    <page path="/pages/flight_info.jsff" usageId="view_flight_infoPageDef1"/>
+    <page path="/inter_airpane.jsff" usageId="view_inter_airpanePageDef"/>
+    <page path="/intr_airport.jsff" usageId="view_intr_airportPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_flight_infoPageDef" path="view.pageDefs.flight_infoPageDef"/>
+    <page id="view_indexPageDef" path="view.pageDefs.indexPageDef"/>
+    <page id="view_flight_infoPageDef1" path="pages.flight_infoPageDef"/>
+    <page id="view_inter_airpanePageDef" path="view.pageDefs.inter_airpanePageDef"/>
+    <page id="view_intr_airportPageDef" path="view.pageDefs.intr_airportPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.AM"
