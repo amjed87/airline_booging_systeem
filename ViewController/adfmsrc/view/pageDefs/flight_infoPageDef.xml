@@ -45,5 +45,7 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="Flight1Iterator" StaticList="false" Uses="LOV_Arrival" id="Arrival1" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
+    <action IterBinding="Flight1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="Flight1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
