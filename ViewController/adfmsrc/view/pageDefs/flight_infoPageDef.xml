@@ -19,44 +19,14 @@
         <Item Value="FlightNumber"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="AirplaneId">
-      <AttrNames>
-        <Item Value="AirplaneId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="Departure">
-      <AttrNames>
-        <Item Value="Departure"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Flight1Iterator" id="DTime">
       <AttrNames>
         <Item Value="DTime"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="Arrival">
-      <AttrNames>
-        <Item Value="Arrival"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Flight1Iterator" id="ATime">
       <AttrNames>
         <Item Value="ATime"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="Company">
-      <AttrNames>
-        <Item Value="Company"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="Type">
-      <AttrNames>
-        <Item Value="Type"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Flight1Iterator" id="Id">
-      <AttrNames>
-        <Item Value="Id"/>
       </AttrNames>
     </attributeValues>
     <tree IterBinding="ClassInfo2Iterator" id="ClassInfo2">
@@ -69,5 +39,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="Flight1Iterator" StaticList="false" Uses="LOV_AirplaneId" id="AirplaneId1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="Flight1Iterator" StaticList="false" Uses="LOV_Departure" id="Departure1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="Flight1Iterator" StaticList="false" Uses="LOV_Arrival" id="Arrival1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
