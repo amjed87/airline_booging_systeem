@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="flight_infoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Flight1" RangeSize="25" DataControl="AppModuleDataControl" id="Flight1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="ClassInfo2" RangeSize="25" DataControl="AppModuleDataControl" id="ClassInfo2Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Flight1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Flight1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Flight1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Flight1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="Flight1Iterator" id="FlightNumber">
+      <AttrNames>
+        <Item Value="FlightNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="AirplaneId">
+      <AttrNames>
+        <Item Value="AirplaneId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="Departure">
+      <AttrNames>
+        <Item Value="Departure"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="DTime">
+      <AttrNames>
+        <Item Value="DTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="Arrival">
+      <AttrNames>
+        <Item Value="Arrival"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="ATime">
+      <AttrNames>
+        <Item Value="ATime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="Company">
+      <AttrNames>
+        <Item Value="Company"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="Type">
+      <AttrNames>
+        <Item Value="Type"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Flight1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ClassInfo2Iterator" id="ClassInfo2">
+      <nodeDefinition DefName="model.VO.ClassInfovo" Name="ClassInfo20">
+        <AttrNames>
+          <Item Value="FlightNumber"/>
+          <Item Value="Name"/>
+          <Item Value="Capacity"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
